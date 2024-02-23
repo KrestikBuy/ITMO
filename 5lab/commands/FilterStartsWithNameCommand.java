@@ -7,11 +7,13 @@ import interfaces.Command;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
-
+/**
+ * Вызываемая команда для вывода всех элементов значения поля name которых начинается с введенной подстроки.
+ */
 public class FilterStartsWithNameCommand implements Command {
 
-    Routestorage routestorage;
-    CommandContext commandContext;
+    private Routestorage routestorage;
+    private CommandContext commandContext;
     public FilterStartsWithNameCommand(Routestorage routestorage, CommandContext commandContext){
         this.routestorage = routestorage;
         this.commandContext = commandContext;

@@ -1,0 +1,86 @@
+{
+  "7894": {
+    "id": 7894,
+    "name": "14",
+    "coordinates": {
+      "x": 14,
+      "y": 14
+    },
+    "creationDate": "Feb 24, 2024, 12:12:07 AM",
+    "from": {
+      "x": 14,
+      "y": 14.0,
+      "name": "14"
+    },
+    "to": {
+      "x": 14,
+      "y": 14.0,
+      "z": 14.0,
+      "name": "14"
+    },
+    "distance": 14.0
+  },
+  "491": {
+    "id": 491,
+    "name": "first",
+    "coordinates": {
+      "x": 10,
+      "y": 10
+    },
+    "creationDate": "Feb 22, 2024, 9:12:31 PM",
+    "from": {
+      "x": 15,
+      "y": 15.0,
+      "name": "Moscow"
+    },
+    "to": {
+      "x": 5,
+      "y": 1.0,
+      "z": 0.0,
+      "name": "SP"
+    },
+    "distance": 15.0
+  },
+  "43": {
+    "id": 43,
+    "name": "exit",
+    "coordinates": {
+      "x": 3,
+      "y": 34
+    },
+    "creationDate": "Feb 24, 2024, 12:34:02 AM",
+    "from": {
+      "x": 343,
+      "y": 344.0,
+      "name": "\"\""
+    },
+    "to": {
+      "x": 4242,
+      "y": 2444.0,
+      "z": 244.0,
+      "name": "2445353"
+    },
+    "distance": 24.0
+  },
+  "7623": {
+    "id": 7623,
+    "name": "second",
+    "coordinates": {
+      "x": 70,
+      "y": 19
+    },
+    "creationDate": "Feb 22, 2024, 9:12:31 PM",
+    "from": {
+      "x": 34,
+      "y": 11.0,
+      "name": "Praga"
+    },
+    "to": {
+      "x": 56,
+      "y": 23.0,
+      "z": 6.0,
+      "name": "Stavropol"
+    },
+    "distance": 546.0
+  }
+}

@@ -7,10 +7,12 @@ import interfaces.Command;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
-
+/**
+ * Вызываемая команда для фильтрации по значению поля distance.
+ */
 public class FilterByDistanceCommand implements Command {
-    Routestorage routestorage;
-    CommandContext commandContext;
+    private Routestorage routestorage;
+    private CommandContext commandContext;
     public FilterByDistanceCommand(Routestorage routestorage, CommandContext commandContext){
         this.routestorage = routestorage;
         this.commandContext = commandContext;

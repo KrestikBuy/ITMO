@@ -3,7 +3,9 @@ package commands;
 import interfaces.Command;
 
 import java.util.*;
-
+/**
+ * Класс отвечающий за регистрирование команд и их вызов.
+ */
 public class CommandExecutor{
     private Map<String, Command> commands;
 

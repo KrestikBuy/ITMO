@@ -6,7 +6,7 @@ public class Location2 implements Validdatable {
     private int x;
     private Double y;
     private Double z; //Поле не может быть null
-    private String name; //Длина строки не должна быть больше 488, Поле не может быть null
+    private String name; //Поле не может быть null
 
     public Location2(int x, Double y, Double z, String name){
         this.x = x;

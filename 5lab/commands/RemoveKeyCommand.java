@@ -5,10 +5,12 @@ import interfaces.Command;
 
 import java.util.LinkedHashMap;
 import java.util.Scanner;
-
+/**
+ * Вызываемая команда для удаления элемента с заданным ключом.
+ */
 public class RemoveKeyCommand implements Command {
-    Routestorage routestorage;
-    CommandContext commandContext;
+    private Routestorage routestorage;
+    private CommandContext commandContext;
     public RemoveKeyCommand(Routestorage routestorage, CommandContext commandContext){
         this.routestorage = routestorage;
         this.commandContext = commandContext;

@@ -2,9 +2,11 @@ package commands;
 
 import classes.Routestorage;
 import interfaces.Command;
-
+/**
+ * Вызываемая команда для вывода коллекции.
+ */
 public class ShowCommand implements Command {
-    Routestorage routestorage;
+    private Routestorage routestorage;
     public ShowCommand(Routestorage routestorage){
         this.routestorage = routestorage;
     }

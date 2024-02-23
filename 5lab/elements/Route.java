@@ -44,6 +44,18 @@ public class Route implements Validdatable, Comparable<Route>{
                 "\n creationDate: " + creationDate + "\n from: \t" + from + "\n to: \t" + to + "\n distance: " + distance + "\n";
     }
 
+//    @Override
+//    public String toString() {
+//        return "Route{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", coordinates=" + coordinates +
+//                ", date=" + creationDate +
+//                ", from='" + from + '\'' +
+//                ", to='" + to + '\'' +
+//                ", distance=" + distance +
+//                '}';
+//    }
     @Override
     public boolean validate() {
         if (id <= 0) return false;

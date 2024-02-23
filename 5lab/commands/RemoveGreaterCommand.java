@@ -3,18 +3,25 @@ package commands;
 import classes.Routestorage;
 import elements.Route;
 import interfaces.Command;
-
+/**
+ * Вызываемая команда для удаления всех элементов, которые больше чем введенный.
+ */
 public class RemoveGreaterCommand implements Command {
-    Routestorage routestorage;
-    Commands commands;
-    public RemoveGreaterCommand(Routestorage routestorage, Commands commands){
+    private Routestorage routestorage;
+    private Commands commands;
+    private CommandContext commandContext;
+    public RemoveGreaterCommand(Routestorage routestorage, Commands commands, CommandContext commandContext){
         this.routestorage = routestorage;
         this.commands = commands;
+        this.commandContext = commandContext;
     }
     @Override
     public void execute() {
-        Route route = commands.insertWithKey();
+        Route route;
+        if (commandContext.getFlagRemove()) route = commandContext.getRoute();
+        else route = commands.insertWithKey(true, 0);
         if (route == null) System.out.println("Некорректно введенные данные для объекта.");
         else routestorage.remove_greater(route);
+        System.out.println("Все допустимые объекты удалены.");
     }
 }

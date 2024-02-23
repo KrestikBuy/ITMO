@@ -7,10 +7,12 @@ import interfaces.Command;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
-
+/**
+ * Вызываемая команда для подсчета элементов значения distance которых больше чем введенное.
+ */
 public class CountGreaterThanDistanceCommand implements Command {
-    Routestorage routestorage;
-    CommandContext commandContext;
+    private Routestorage routestorage;
+    private CommandContext commandContext;
     public CountGreaterThanDistanceCommand(Routestorage routestorage, CommandContext commandContext){
         this.routestorage = routestorage;
         this.commandContext = commandContext;

@@ -7,7 +7,9 @@ import elements.Route;
 
 import java.util.*;
 import java.util.stream.Collectors;
-
+/**
+ * Класс ответственный за коллекцию.
+ */
 public class Routestorage {
     Scanner scanner = new Scanner(System.in);
     private Date date;
@@ -18,6 +20,11 @@ public class Routestorage {
         this.date = new Date();
     }
 
+
+    public void setCollection(LinkedHashMap map){
+        this.map = map;
+    }
+
     public int getLength() {
         return map.size();
     }
@@ -25,39 +32,53 @@ public class Routestorage {
     public Date getDate() {
         return date;
     }
-
-    public void add(Route route) {
-        if (route.validate()) map.put(route.getId(), route);
-        else System.out.println("Некорректно введенные данные.");
-    }
-
+    /**
+     * Удаляет элемент из коллекции.
+     */
     public void removeobject(int key) {
         if (map.containsKey(key)) {
             System.out.println("Объект удален.");
             map.remove(key);
         } else System.out.println("ОШИБКА: Данного ключа не найдено!");
     }
-
+    /**
+     * Полностью отчищает коллекцию.
+     */
     public void clear() {
         map.clear();
         System.out.println("Коллекция отчищена.");
     }
-
+    /**
+     * Удаляет все элементы из коллекции которые больше чем введенный.
+     */
     public void remove_greater(Route route) {
-        for (Map.Entry<Integer, Route> entry : map.entrySet()) {
-            if (route.compareTo(entry.getValue()) > 0) {
-                map.remove(entry.getKey());
-            }
-        }
-    }
-    public void remove_lower(Route route) {
+        Set<Integer> keysToRemove = new HashSet<>();
         for (Map.Entry<Integer, Route> entry : map.entrySet()) {
             if (route.compareTo(entry.getValue()) < 0) {
-                map.remove(entry.getKey());
+                keysToRemove.add(entry.getKey());
             }
         }
+        for (Integer key : keysToRemove) {
+            map.remove(key);
+        }
     }
-
+    /**
+     * Удаляет все элементы из коллекции которые меньше чем введенный.
+     */
+    public void remove_lower(Route route) {
+        Set<Integer> keysToRemove = new HashSet<>();
+        for (Map.Entry<Integer, Route> entry : map.entrySet()) {
+            if (route.compareTo(entry.getValue()) > 0) {
+                keysToRemove.add(entry.getKey());
+            }
+        }
+        for (Integer key : keysToRemove) {
+            map.remove(key);
+        }
+    }
+    /**
+     * Удаляет все элементы из коллекции ключ которых меньше чем введенный.
+     */
     public void remove_lower_key(int id) {
         Set<Integer> keysToRemove = new HashSet<>();
         for (Map.Entry<Integer, Route> entry : map.entrySet()) {
@@ -69,12 +90,16 @@ public class Routestorage {
             map.remove(key);
         }
     }
-
+    /**
+     * Меняет элемент с заданным ключом на введенный.
+     */
     public void updateobject(Route route) {
         map.put(route.getId(), route);
         System.out.println("Объект Обновлен.");
     }
-
+    /**
+     * Добавляет элемент в коллекцию.
+     */
     public void addobject(Route route) {
         map.put(route.getId(), route);
         System.out.println("Объект создан.");
@@ -93,8 +118,8 @@ public class Routestorage {
     }
 
     public void sort() {
-        LinkedHashMap<Integer, Route> sortedMap = map.entrySet().stream().sorted(Map.Entry.comparingByValue())
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+        LinkedHashMap<Integer, Route> sortedMap = map.entrySet().stream()
+                .sorted((e1, e2) -> e1.getValue().compareTo(e2.getValue())).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
 
         map = sortedMap;
     }
